@@ -1,0 +1,17 @@
+<button type="button" class="btn btn-secondary" routerLink="/create-task">Create Task</button>
+<br>
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Detail</th>
+    <th class="action">Action</th>
+  </tr>
+  <tr *ngFor="let t of todos">
+    <td>{{ t.task }}</td>
+    <td>{{ t.detail }}</td>
+    <td class="action">
+        <button type="button" class="btn btn-success" (click)="editTodo(t.id)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="deleteTodo(t.id)">Delete</button>
+    </td>
+  </tr>
+</table>
